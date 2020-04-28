@@ -6,6 +6,7 @@ void printlist(int *list, int len){
     for(int i=0; i< len; i++){
         printf("%d ",list[i]);
     }
+    //姆咪
     printf("\n");
 };
 

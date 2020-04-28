@@ -10,7 +10,7 @@ void printlist(int *list, int len){
     printf("\n");
 };
 
-int merge(int *list, int low, int mid, int high){
+void merge(int *list, int low, int mid, int high){
     int *left =  malloc(sizeof(int) * ((mid-low)+1));
     int *right = malloc(sizeof(int) * (high - mid));
 
@@ -35,7 +35,7 @@ int merge(int *list, int low, int mid, int high){
         }
         i++;
     }
-};
+}
 
 void mergeSort(int *list, int low, int high){
     //base case 

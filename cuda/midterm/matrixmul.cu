@@ -17,6 +17,12 @@ __global__ void matMultiply_Gpu(int *a, int *b, int *c, int width){
 
 //隨機產生矩陣
 void intMatrixGen(int *mat, int length, char type){
+
+        //設定seed
+    unsigned seed;
+    seed = (unsigned)time(NULL); // 取得時間序列
+    srand(seed); // 以時間序列當亂數種子
+
     int i,j;
     for(i=0;i<length;i++){
         for(j=0;j<length;j++){
@@ -33,8 +39,6 @@ void intMatrixGen(int *mat, int length, char type){
         }
     }
 };
-
-
 
 //印出矩陣
 void printIntMatrix(int *mat,int length){
@@ -63,10 +67,7 @@ void matMultiply_Cpu(int *a, int *b, int *c, int length){
 
 int main(){
     int length =3;
-    //設定seed
-    unsigned seed;
-    seed = (unsigned)time(NULL); // 取得時間序列
-    srand(seed); // 以時間序列當亂數種子
+
 
     //初始化矩陣
     int *a = (int*) malloc(sizeof(int) * length * length);

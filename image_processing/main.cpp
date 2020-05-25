@@ -1,14 +1,9 @@
+#include <image_processing/Util/MyMatrix.hpp>
 #include <opencv2/opencv.hpp>
-#include <iostream>
-#include <iomanip>
-
-using namespace cv;
-using namespace std;
 int main()
 {
-    Mat image = imread("D://downloads//image//1.jpg");
-
-    cv::imshow("test", image);
-    cv::waitKey(0);
+    cv::Mat image = cv::imread("D://downloads//image//1.jpg");
+    MyMatrix a = MyMatrix(image);
+    cout << a.GetChannels();
     return 0;
 }

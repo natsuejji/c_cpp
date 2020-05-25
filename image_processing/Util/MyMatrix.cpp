@@ -2,14 +2,17 @@
 //隨機初始化陣列
 void MyMatrix::RandomInitData()
 {
+    for (auto i : this->data)
+    {
+        i = (float)rand() / (RAND_MAX + 1.0);
+    }
 }
 //轉出mat
 cv::Mat MyMatrix::VToMat()
 {
     cv::Mat n = cv::Mat(this->data);
-    return n.reshape(3, this->rows);
+    return n.reshape(this->channels, this->rows);
 }
-
 //data
 vector<float> MyMatrix::GetData()
 {

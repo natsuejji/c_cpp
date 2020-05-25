@@ -62,9 +62,17 @@ MyMatrix::MyMatrix(int rows, int cols, int channels)
 
 MyMatrix::MyMatrix(const MyMatrix &copy)
 {
+    this->rows = copy.rows;
+    this->cols = copy.cols;
+    this->channels = copy.channels;
+    for (int i = 0; i < this->rows * this->cols * this->channels; i++)
+    {
+        this->data[i] = copy.data[i];
+    }
 }
 //destructor
 MyMatrix::~MyMatrix()
 {
+    data.clear();
 }
 #endif
